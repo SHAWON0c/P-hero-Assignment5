@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 5 (Blog Page)</title>
+
+
+    <link rel="stylesheet" href="styles/style.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .font-custom {
+            font-family: "Poppins", sans-serif;
+        }
+
+        input::placeholder {
+            font-size: 18px;
+            font-weight: 300;
+        }
+
+
+        body {
+            background-color: #F4F4F4;
+            color: #2A2A2A;
+        }
+
+        .navbar {
+            background-color: white;
+        }
+
+        .bg-button-custom {
+            background-color: #B4F461;
+            color: black;
+        }
+
+        .text-primary {
+            color: #1A202C;
+        }
+
+        .text-secondary {
+            color: #718096;
+        }
+
+        .rounded-lg {
+            border-radius: 12px;
+        }
+
+        .drop-shadow-lg {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapse-title {
+            background-color: #3182CE;
+            color: white;
+        }
+
+        .collapse-arrow::after {
+            border-color: #3182CE;
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        customGreen: '#48BB78',
+                        customGray: '#F4F4F4',
+                        primaryDark: '#2A2A2A',
+                        secondaryText: '#718096',
+                        collapseBg: '#3182CE',
+                    },
+                    container: {
+                        center: true,
+                        padding: '1.5rem',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-custom">
+    <header>
+        <div id="navbar-container" class="navbar py-5 mb-8">
+            <div class="container flex justify-between">
+                <div class="hidden lg:block">
+                    <button id="home-btn" class="bg-button-custom text-xl font-bold px-5 py-3 rounded-lg">Home</button>
+                </div>
+
+                <div class="space-x-5 flex justify-center items-center">
+                    <img alt="Tailwind CSS Navbar component" src="assets/logo.png" />
+                    <h1 class="text-2xl font-bold text-primary">Donate Bangladesh</h1>
+                </div>
+
+                <div class="gap-x-2 hidden lg:flex">
+                    <img src="assets/coin.png" alt="">
+                    <p class="text-lg font-bold text-secondary">5500 BDT</p>
+                </div>
+
+                <div class="dropdown lg:hidden">
+                    <div tabindex="0" role="button" class="btn btn-ghost">
+                        <i class="fa-solid fa-bars text-xl text-gray-600 py-2 px-3 rounded-full"></i>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow right-0">
+                        <li>
+                            <div class="mx-auto">
+                                <button class="bg-button-custom text-xl font-bold px-5 py-3 rounded-lg">Blog</button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="gap-x-2 mx-auto">
+                                <img src="assets/coin.png" alt="">
+                                <p class="text-lg font-bold text-secondary">5500 BDT</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="container px-0 drop-shadow-lg">
+                <div class="mb-8">
+                    <h1 class="text-4xl font-bold text-primary">Important FAQ</h1>
+                </div>
+
+                <div class="collapse collapse-arrow rounded-md border-2">
+                    <input type="radio" name="my-accordion-2" checked="checked" />
+                    <div class="collapse-title text-lg font-bold">What is the Document Object Model (DOM)?</div>
+                    <div class="collapse-content">
+                        <p class="text-md text-secondary"> <br> The Document Object Model (DOM) is a programming interface for
+                            web documents, such as HTML or XML. It represents the structure of a web page in a
+                            hierarchical tree format, where every element on the page (such as paragraphs, headers,
+                            images, and links) is represented as a node. The DOM allows programming languages like
+                            JavaScript to access, modify, and interact with these elements dynamically.</p>
+                    </div>
+                </div>
+
+                <div class="collapse collapse-arrow rounded-md border-2">
+                    <input type="radio" name="my-accordion-2" />
+                    <div class="collapse-title text-lg font-bold">How do you select an element from the DOM?</div>
+                    <div class="collapse-content">
+                        <p class="text-md text-secondary">To select an element from the DOM, we can use: <br> 
+                            <br>
+                            1. getElementById(): Selects an element by its unique ID. <br>
+                            2. getElementsByClassName(): Selects all elements with a specific class name (returns a
+                            collection). <br>
+                            3. getElementsByTagName(): Selects all elements with a specific tag name (returns a
+                            collection). <br>
+                            4. querySelector(): Selects the first element that matches a given CSS selector.<br>
+                            5. querySelectorAll(): Selects all elements that match a given CSS selector (returns a
+                            NodeList).<br>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="collapse collapse-arrow rounded-md border-2">
+                    <input type="radio" name="my-accordion-2" />
+                    <div class="collapse-title text-lg font-bold">What is event delegation in the context of DOM?</div>
+                    <div class="collapse-content">
+                        <p class="text-md text-secondary">Event delegation in the context of the DOM is a technique
+                            where a single event listener is attached to a parent element to handle events triggered by
+                            its child elements. Instead of adding separate event listeners to each child, the parent
+                            listens for events from its children and processes them using event bubbling.</p>
+                    </div>
+                </div>
+
+                <div class="collapse collapse-arrow rounded-md border-2">
+                    <input type="radio" name="my-accordion-2" />
+                    <div class="collapse-title text-lg font-bold">How do you manipulate an element's attributes and
+                        styles using DOM?</div>
+                    <div class="collapse-content">
+                        <p class="text-md text-secondary">You can manipulate an element's attributes and styles using the DOM in the following ways:  <br>
+
+                            Manipulating Attributes: <br><br>
+                            
+                            getAttribute(): Retrieves the value of an attribute. <br>
+                            setAttribute(): Sets or updates the value of an attribute. <br>
+                            removeAttribute(): Removes an attribute from an element. <br>
+                            <br>
+                            Manipulating Styles:<br>
+                            
+                            Access the style property: Use the style property to directly change CSS styles (e.g., element.style.color = 'red').
+                            Modify CSS classes: Add, remove, or toggle CSS classes using classList (e.g., element.classList.add('active')).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="blog.js"></script>
+</body>
+
+</html>
